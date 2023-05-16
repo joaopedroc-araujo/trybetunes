@@ -7,6 +7,7 @@ import Profile from './pages/Profile';
 import Favorites from './pages/Favorites';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
+import Header from './Components/Header';
 
 class App extends React.Component {
   render() {
@@ -23,27 +24,52 @@ class App extends React.Component {
             <Route
               exact
               path="/search"
-              component={ Search }
+              render={ () => (
+                <>
+                  <Header />
+                  <Search />
+                </>
+              ) }
             />
             <Route
               exact
               path="/album/:id"
-              component={ Album }
+              render={ () => (
+                <>
+                  <Header />
+                  <Album />
+                </>
+              ) }
             />
             <Route
               exact
               path="/favorites"
-              component={ Favorites }
+              render={ () => (
+                <>
+                  <Header />
+                  <Favorites />
+                </>
+              ) }
             />
             <Route
               exact
               path="/profile"
-              component={ Profile }
+              render={ () => (
+                <>
+                  <Header />
+                  <Profile />
+                </>
+              ) }
             />
             <Route
               exact
               path="/profile/edit"
-              component={ ProfileEdit }
+              render={ () => (
+                <>
+                  <Header />
+                  <ProfileEdit />
+                </>
+              ) }
             />
             <Route
               exact

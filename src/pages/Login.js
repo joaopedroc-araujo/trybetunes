@@ -1,4 +1,6 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
@@ -14,8 +16,8 @@ class Login extends React.Component {
   };
 
   handleClickButton = async () => {
-    const { name } = this.state;
     const { history } = this.props;
+    const { name } = this.state;
     this.setState({ loading: true });
     await createUser({ name });
     history.push('/search');
@@ -61,4 +63,4 @@ Login.propTypes = {
   }).isRequired,
 };
 
-export default Login;
+export default withRouter(Login);

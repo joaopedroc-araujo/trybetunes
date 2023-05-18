@@ -19,7 +19,9 @@ class App extends React.Component {
             <Route
               exact
               path="/"
-              component={ Login }
+              render={ () => (
+                <Login />
+              ) }
             />
             <Route
               exact
